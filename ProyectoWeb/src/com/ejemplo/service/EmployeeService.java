@@ -21,11 +21,13 @@ import com.ejemplo.tablasDTO.Empleado;
 import com.ejemplo.tablasDTO.Employees;
 
 
+import com.ejemplo.interfaz.*;
 
 public class EmployeeService  {
 	
 	private static Logger log = Logger.getLogger("mylog");
 	
+	 IRecuperable recuperable;
 	
 	EmployeesDAO employeesDAO=new EmployeesDAO();
 	DepartmentsDAO departmentsDAO=new DepartmentsDAO();
@@ -36,6 +38,19 @@ public class EmployeeService  {
 	this.departmentsDAO=new DepartmentsDAO();
 	
 }
+	//set recuperable para servlet get
+	public void setRecuperable(IRecuperable recuperable) {
+		this.recuperable = recuperable;
+	}
+//
+	public Object leerEmpleado(int i){
+		Object o=null;
+		o=recuperable.leerEmpleado(i);
+		return o;
+	}
+
+
+
 	/**
 	 * 
 	 * @return incrementa salario de todos los empleados
@@ -182,44 +197,7 @@ public class EmployeeService  {
 		}
 		
 		
-		public Employees obtenerEmpleado(String id){
-			
-			
-			try {
-				Connection conn=null;
-				ResultSet rset=null;
-				Statement stmt=null;
-				
-				String name=null;
-				
-				conn=Pool.getConnection();	
-				stmt= conn.createStatement();
-				//rset = stmt.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID="+id_empleado);
-				
-				rset=stmt.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID="+id);
-				Employees empleado=null;
-				
-				if (rset.next()){
-						//Empleado 
-						//0name=empleado.getFirst_name();
-						name = rset.getString(2);
-						
-						
-						
-				}else{
-					name="No hay empleado";
-					
-				}
-				//salida.println();
-		} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			return empleado;
-			
-			
-		}
+		
 		
 }
 

@@ -45,5 +45,17 @@
       <servlet-name>EjemploEmpleado</servlet-name>
       <url-pattern>/EjemploEmpleado</url-pattern>
    </servlet-mapping>
+   
+   <listener>
+       <listener-class>com.ejemplo.listeners.ListenerHttp</listener-class>
+   </listener>
+    <listener>
+       <listener-class>com.ejemplo.listeners.ListenerServletContext</listener-class>
+   </listener>
+   <listener>
+       <listener-class>com.ejemplo.listeners.ListenerServletRequest</listener-class>
+   </listener>
+   
+   
     
 </web-app>
