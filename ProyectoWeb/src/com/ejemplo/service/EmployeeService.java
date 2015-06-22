@@ -1,5 +1,9 @@
 package com.ejemplo.service;
 import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +14,10 @@ import org.hibernate.Transaction;
 
 import com.ejemplo.DAO.DepartmentsDAO;
 import com.ejemplo.DAO.EmployeesDAO;
+import com.ejemplo.connection.Pool;
 import com.ejemplo.connection.SessionManager;
 import com.ejemplo.tablasDTO.Departments;
+import com.ejemplo.tablasDTO.Empleado;
 import com.ejemplo.tablasDTO.Employees;
 
 
@@ -173,6 +179,46 @@ public class EmployeeService  {
 				session.close();
 			}
 			return listempdepartamento;
+		}
+		
+		
+		public Employees obtenerEmpleado(String id){
+			
+			
+			try {
+				Connection conn=null;
+				ResultSet rset=null;
+				Statement stmt=null;
+				
+				String name=null;
+				
+				conn=Pool.getConnection();	
+				stmt= conn.createStatement();
+				//rset = stmt.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID="+id_empleado);
+				
+				rset=stmt.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID="+id);
+				Employees empleado=null;
+				
+				if (rset.next()){
+						//Empleado 
+						//0name=empleado.getFirst_name();
+						name = rset.getString(2);
+						
+						
+						
+				}else{
+					name="No hay empleado";
+					
+				}
+				//salida.println();
+		} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return empleado;
+			
+			
 		}
 		
 }
