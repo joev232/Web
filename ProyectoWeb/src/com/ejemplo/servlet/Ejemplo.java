@@ -52,17 +52,15 @@ public class Ejemplo extends HttpServlet {
 			Empleado empleado=null;
 			
 			if (rset.next()){
-									
 					//Empleado 
-					name=empleado.getFirst_name();
-					
-					
+					//0name=empleado.getFirst_name();
+					name = rset.getString(2);
 			}else{
-				name="";
+				name="No hay empleado";
 				
 			}
 			//salida.println();
-			resp.setContentType("txt/html");
+			resp.setContentType("text/html");
 			salida.println(name);
 			
 			

@@ -29,8 +29,6 @@ public class Pool {
 	{
 		fuenteDatos = iniciarFuente();
 	}
-	
-		
 
 	private static DataSource iniciarFuente ()
 	{

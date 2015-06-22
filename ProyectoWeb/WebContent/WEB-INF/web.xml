@@ -27,7 +27,7 @@
       <description>Ejemplo base datos</description>
       <display-name>Ejemplo</display-name>
       <servlet-name>Ejemplo</servlet-name>
-      <servlet-class>Ejemplo</servlet-class>
+      <servlet-class>com.ejemplo.servlet.Ejemplo</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -35,4 +35,15 @@
       <url-pattern>/Ejemplo</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+      <description>Eejemplo bd hiber</description>
+      <display-name>EjemploEmpleado</display-name>
+      <servlet-name>EjemploEmpleado</servlet-name>
+      <servlet-class>com.ejemplo.servlet.EjemploEmpleado</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>EjemploEmpleado</servlet-name>
+      <url-pattern>/EjemploEmpleado</url-pattern>
+   </servlet-mapping>
+    
 </web-app>
