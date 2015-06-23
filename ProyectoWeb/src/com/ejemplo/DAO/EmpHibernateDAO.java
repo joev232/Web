@@ -25,7 +25,7 @@ public class EmpHibernateDAO implements IRecuperable{
 //Session session;
 public Object leerEmpleado(int n) {
 		// TODO Auto-generated method stub
-		//sessionmanager
+		//sessionmanager  obtener session
 	Object empleado=null;
 		try {
 			
