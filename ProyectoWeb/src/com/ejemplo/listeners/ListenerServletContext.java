@@ -15,6 +15,7 @@ public class ListenerServletContext implements ServletContextListener{
 		// TODO Auto-generated method stub
 		
 		//estaria en un try 
+		
 		ServletContext sc=sce.getServletContext();
 		SessionFactory sf=(SessionFactory) sc.getAttribute("sf");
 		sf.close();
@@ -27,6 +28,10 @@ public class ListenerServletContext implements ServletContextListener{
 		// TODO Auto-generated method stub
 		//se llama cuando arranca la aplicacion 
 		//session manager y log y iniciarHB
+		
+		//numero de peticiones
+		int n_petis=0;
+		
 		ServletContext sc=null;
 		sc= sce.getServletContext();//refencia al objeto
 		//llamar a session manager y coger el sessiomfactory y me guardo el contexto

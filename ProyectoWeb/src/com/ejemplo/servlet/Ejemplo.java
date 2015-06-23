@@ -62,9 +62,6 @@ public class Ejemplo extends HttpServlet {
 			//salida.println();
 			resp.setContentType("text/html");
 			salida.println(name);
-			
-			
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

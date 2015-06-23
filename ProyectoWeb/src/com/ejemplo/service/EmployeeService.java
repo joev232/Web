@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import org.apache.log4j.Logger;
+
+//import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -25,7 +27,9 @@ import com.ejemplo.interfaz.*;
 
 public class EmployeeService  {
 	
-	private static Logger log = Logger.getLogger("mylog");
+	//private static Logger log = Logger.getLogger("mylog");
+	private  final Logger log = LogManager.getRootLogger();
+	
 	
 	 IRecuperable recuperable;
 	
@@ -38,19 +42,7 @@ public class EmployeeService  {
 	this.departmentsDAO=new DepartmentsDAO();
 	
 }
-	//set recuperable para servlet get
-	public void setRecuperable(IRecuperable recuperable) {
-		this.recuperable = recuperable;
-	}
-//
-	public Object leerEmpleado(int i){
-		Object o=null;
-		o=recuperable.leerEmpleado(i);
-		return o;
-	}
-
-
-
+	
 	/**
 	 * 
 	 * @return incrementa salario de todos los empleados
