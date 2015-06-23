@@ -19,7 +19,7 @@ public class ListenerServletContext implements ServletContextListener{
 		SessionFactory sf=(SessionFactory) sc.getAttribute("sf");
 		sf.close();
 			
-		System.out.println("contexto destruido");
+		//System.out.println("contexto destruido");
  }
 
 	@Override
