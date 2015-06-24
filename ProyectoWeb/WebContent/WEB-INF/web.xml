@@ -40,11 +40,56 @@
       <display-name>EjemploEmpleado</display-name>
       <servlet-name>EjemploEmpleado</servlet-name>
       <servlet-class>com.ejemplo.servlet.EjemploEmpleado</servlet-class>
+       
    </servlet>
    <servlet-mapping>
       <servlet-name>EjemploEmpleado</servlet-name>
       <url-pattern>/EjemploEmpleado</url-pattern>
+           
    </servlet-mapping>
+
+   <servlet>
+       <description>Ejemplo salario</description>
+       <display-name>IncrementarSalario</display-name>
+       <servlet-name>IncrementarSalario</servlet-name>
+       <servlet-class>com.ejemplo.servlet.IncrementarSalario</servlet-class>
+       
+       <init-param>
+           <param-name>n2</param-name>
+           <param-value>200</param-value>
+           
+       </init-param>
+       
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IncrementarSalario</servlet-name>
+        <url-pattern>/IncrementarSalario</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <description>Ejemplo Autenticacion</description>
+        <display-name>ServletAutenticacion</display-name>
+        <servlet-name>ServletAutenticacion</servlet-name>
+        <servlet-class>com.ejemplo.servlet.ServletAutenticacion</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ServletAutenticacion</servlet-name>
+        <url-pattern>/ServletAutenticacion</url-pattern>
+    </servlet-mapping>
+   
+    <servlet>
+        <description>Ejemplo de session</description>
+        <display-name>MiSession</display-name>
+        <servlet-name>MiSession</servlet-name>
+        <servlet-class>com.ejemplo.session.MiSession</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>MiSession</servlet-name>
+        <url-pattern>/MiSession</url-pattern>
+    </servlet-mapping>
+    
    
    <!-- listener -->
    <listener>
@@ -65,8 +110,12 @@
     <filter-name>Filtro</filter-name>
     <url-pattern>/*</url-pattern> 
   </filter-mapping>
-   
-   
-   
-    
+  
+  <!-- servlet context -->
+  <context-param>
+      <param-name>username</param-name>
+      <param-value>system</param-value>
+  </context-param>
+ 
+
 </web-app>

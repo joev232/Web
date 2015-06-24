@@ -3,12 +3,15 @@ package com.ejemplo.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -20,6 +23,8 @@ import com.ejemplo.service.EmployeeServiceServlet;
 import com.ejemplo.tablasDTO.Employees;
 
 public class EjemploEmpleado extends HttpServlet {
+	
+	private final Logger log= LogManager.getRootLogger();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -33,6 +38,8 @@ public class EjemploEmpleado extends HttpServlet {
 		es.setRecuperable(i_hibernate);
 		Employees edto = (Employees) es.leerEmpleado(Integer.parseInt(req.getParameter("nombre")));
 		//falta implentar esta cuadernos
+		
+		
 		resp.setContentType("text/html");
 		PrintWriter pw=resp.getWriter();
 		pw.println(edto.getFirstName());

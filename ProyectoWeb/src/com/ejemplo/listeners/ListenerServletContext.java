@@ -16,9 +16,10 @@ public class ListenerServletContext implements ServletContextListener{
 		
 		//estaria en un try 
 		
-		ServletContext sc=sce.getServletContext();
-		SessionFactory sf=(SessionFactory) sc.getAttribute("sf");
-		sf.close();
+		
+//		ServletContext sc=sce.getServletContext();
+//		SessionFactory sf=(SessionFactory) sc.getAttribute("sf");
+//		sf.close();
 			
 		//System.out.println("contexto destruido");
  }
@@ -30,17 +31,17 @@ public class ListenerServletContext implements ServletContextListener{
 		//session manager y log y iniciarHB
 		
 		//numero de peticiones
-		int n_petis=0;
-		
-		ServletContext sc=null;
-		sc= sce.getServletContext();//refencia al objeto
-		//llamar a session manager y coger el sessiomfactory y me guardo el contexto
-		
-		
-		SessionFactory sf= SessionManager.getSessionFactory();
-		
-		//me guardo contexto
-		sc.setAttribute("sf", sf);
+//		int n_petis=0;
+//		
+//		ServletContext sc=null;
+//		sc= sce.getServletContext();//refencia al objeto
+//		//llamar a session manager y coger el sessiomfactory y me guardo el contexto
+//		
+//		
+//		SessionFactory sf= SessionManager.getSessionFactory();
+//		
+//		//me guardo contexto
+//		sc.setAttribute("sf", sf);
 		
 		System.out.println("contexto inicializado");
 		
