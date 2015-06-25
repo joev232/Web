@@ -15,7 +15,7 @@
 
 		<property name="hibernate.jdbc.use_get_generated_keys">true</property>
         <!-- Mapping files -->
-        <mapping resource="Region.hbm.xml"/>
+        <mapping resource="Regions.hbm.xml"/>
         <mapping resource="Departments.hbm.xml"/>
         <mapping resource="EmpDetailsView.hbm.xml"/>
         <mapping resource="Employees.hbm.xml"/>

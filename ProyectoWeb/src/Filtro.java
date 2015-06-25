@@ -27,12 +27,15 @@ public class Filtro implements javax.servlet.Filter {
 		// TODO Auto-generated method stub
 		
 		//para acceder a un servelcontetx
+		
 		arg0.getServletContext();
 		
 		
 		Long ti=System.currentTimeMillis();
 		//dentro del tercer parametro 
-		arg2.doFilter(arg0, arg1);
+		
+		//arg2.doFilter(arg0, arg1);
+		
 		//antes y despues el tiempo para saber el tiempo q tarda el filter
 		
 		Long tf= System.currentTimeMillis();

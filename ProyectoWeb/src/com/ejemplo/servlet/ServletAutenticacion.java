@@ -8,10 +8,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,6 +36,8 @@ private final Logger log= LogManager.getRootLogger();
 			Connection conn=null;
 			ResultSet rset=null;
 			Statement stmt=null;
+			ServletContext sc=null;
+			HttpSession session=null;
 			
 			conn=Pool.getConnection();	
 			stmt= conn.createStatement();
@@ -43,9 +47,12 @@ private final Logger log= LogManager.getRootLogger();
 			if (rset.next()){
 				String nombreusuario=rset.getString(1);
 				String password=rset.getString(2);
-			
+				
 				if((nombreusuario.equals(nombre)) && (password.equals(pass))   ){
 					log.info("Bienvenido"+nombreusuario);
+					session=req.getSession();
+					session.setAttribute("nombreusuario", nombreusuario);
+					//sc.setAttribute(nombreusuario, password);
 				}else{
 					log.info("usuario no existe");
 				}
