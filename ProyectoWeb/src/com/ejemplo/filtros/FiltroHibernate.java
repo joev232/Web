@@ -1,3 +1,4 @@
+package com.ejemplo.filtros;
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
@@ -7,7 +8,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 
-public class FiltroJDBC implements javax.servlet.Filter {
+public class FiltroHibernate implements javax.servlet.Filter{
 
 	@Override
 	public void destroy() {
@@ -19,8 +20,6 @@ public class FiltroJDBC implements javax.servlet.Filter {
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,
 			FilterChain arg2) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		
-		//hacer un get y un set
 		
 		
 	}

@@ -52,6 +52,8 @@ private final Logger log= LogManager.getRootLogger();
 					log.info("Bienvenido"+nombreusuario);
 					session=req.getSession();
 					session.setAttribute("nombreusuario", nombreusuario);
+					//hago el logout
+					
 					//sc.setAttribute(nombreusuario, password);
 				}else{
 					log.info("usuario no existe");

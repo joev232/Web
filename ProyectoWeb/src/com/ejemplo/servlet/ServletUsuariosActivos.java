@@ -1,6 +1,7 @@
 package com.ejemplo.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -32,10 +33,14 @@ public class ServletUsuariosActivos extends HttpServlet{
 		//entry clave valor
 		Iterator it=map.entrySet().iterator();
 		Map.Entry e=null;
+		
+		PrintWriter pw= resp.getWriter();
 		while(it.hasNext()){
 			e=(Entry) it.next();
 			log.info(e.getKey());
 			log.info(e.getValue());
+			pw.println(e.getKey());
+			pw.println(e.getValue());
 		}
 		
 	//	super.doGet(req, resp);

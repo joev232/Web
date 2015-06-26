@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 
 
@@ -20,11 +22,15 @@ import com.ejemplo.tablasDTO.Departments;
 
 public class ListaDepartamento extends HttpServlet  {
 	
+	private final Logger log=LogManager.getRootLogger();
+	private int nveces;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		nveces++;
+		log.info(nveces);
 		
 		Session session=SessionManager.obtenerSesionNueva();
 		List<Departments> ld=session.createSQLQuery("SELECT * FROM DEPARTMENTS").addEntity(Departments.class).list();
@@ -39,6 +45,7 @@ public class ListaDepartamento extends HttpServlet  {
 		}
 		pw.println("</select>");
 		
+		req.getRequestDispatcher("/ServletUsuariosActivos").include(req, resp);
 				
 		//super.doGet(req, resp);
 	}
