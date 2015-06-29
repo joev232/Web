@@ -2,6 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>ProyectoWeb</display-name>
   <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -22,6 +23,19 @@
       <url-pattern>/Prueba</url-pattern>
       
   </servlet-mapping>
+  
+  <servlet>
+      <description>Ejemplo de Listar Sueldos</description>
+      <display-name>ListarSueldos</display-name>
+      <servlet-name>ListarSueldos</servlet-name>
+      <servlet-class>com.ejemplo.servlet.ListarSueldos</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>ListarSueldos</servlet-name>
+      <url-pattern>/ListarSueldos</url-pattern>
+  </servlet-mapping>
+   
   
   <servlet>
       <description>Ejemplo base datos</description>
@@ -141,7 +155,7 @@
    
    <!-- filtrtossss -->
    
-  <filter>
+  <!-- <filter>
     <filter-name>Filtro</filter-name>
     <filter-class>com.ejemplo.filtros.Filtro</filter-class>
   </filter>
@@ -149,6 +163,8 @@
     <filter-name>Filtro</filter-name>
     <url-pattern>/*</url-pattern> 
   </filter-mapping>   
+   -->
+  
   
   <!-- servlet context -->
  

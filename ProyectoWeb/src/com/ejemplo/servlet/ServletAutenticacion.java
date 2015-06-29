@@ -31,7 +31,8 @@ private final Logger log= LogManager.getRootLogger();
 		// TODO Auto-generated method stub
 		String nombre=req.getParameter("nombre");
 		String pass=req.getParameter("pass");
-		
+		resp.setContentType("text/html");
+		PrintWriter pw=resp.getWriter();
 		try {
 			Connection conn=null;
 			ResultSet rset=null;
@@ -42,7 +43,7 @@ private final Logger log= LogManager.getRootLogger();
 			conn=Pool.getConnection();	
 			stmt= conn.createStatement();
 			
-			rset=stmt.executeQuery("SELECT * FROM USUARIO WHERE USER_NAME='"+nombre+"'");
+			rset=stmt.executeQuery("SELECT * FROM USUARIO WHERE USER_NAME='"+nombre+"'and USER_PASS='"+pass+"'");
 			//rset=stmt.executeQuery("select * from USUARIO WHERE USER_NAME="+nombre);
 			if (rset.next()){
 				String nombreusuario=rset.getString(1);
@@ -55,20 +56,32 @@ private final Logger log= LogManager.getRootLogger();
 					//hago el logout
 					
 					//sc.setAttribute(nombreusuario, password);
-				}else{
-					log.info("usuario no existe");
+							
 				}
-				
-				resp.setContentType("text/html");
-				PrintWriter pw=resp.getWriter();
-				pw.println("Bienvenido"+nombreusuario);
+				/**
+				 * else{
+					log.info("usuario no existe");
+					pw.println("usuario no existe");
+				}
+				 */
+				pw.println("Bienvenido  "+nombreusuario);
 				//pw.println(edto.getFirstName());
-						
+				
+				pw.println("<ul>");
+				pw.println("<li>");
+				pw.println("<a href=\"/ProyectoWeb/ingresarsalario.html\"> Listar Sueldos </a>" );
+				pw.println("</li>");
+				pw.println("</ul>");
+			} else{
+				log.info("usuario no existe");
+				pw.println("usuario no existe");
 			}
-			
+			conn.commit();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally{
+			//pool.liberarRecursos(conn, stm, rset);
 		}
 		
 	//	super.doPost(req, resp);
