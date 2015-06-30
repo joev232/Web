@@ -72,6 +72,24 @@ private final Logger log= LogManager.getRootLogger();
 				pw.println("<a href=\"/ProyectoWeb/ingresarsalario.html\"> Listar Sueldos </a>" );
 				pw.println("</li>");
 				pw.println("</ul>");
+
+				
+				pw.println("<form >");
+				
+				pw.println("<ul>");
+				pw.println("<li>");
+				pw.println("<a href=\"/ProyectoWeb/ListaDepartamento\"> Lista Departamentos </a>" );
+				pw.println("</li>");
+				pw.println("</ul>");
+
+				
+				pw.println("<ul>");
+				pw.println("<li>");
+				pw.println("<a href=\"/ProyectoWeb/CerrarSession\"> SALIR </a>" );
+				pw.println("</li>");
+				pw.println("</ul>");
+
+				
 			} else{
 				log.info("usuario no existe");
 				pw.println("usuario no existe");

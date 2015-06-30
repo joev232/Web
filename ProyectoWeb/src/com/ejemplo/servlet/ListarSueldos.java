@@ -42,7 +42,7 @@ public class ListarSueldos extends HttpServlet {
 		
 		
 		Session session=SessionManager.obtenerSesionNueva();
-		List<Employees> sueldoemp=session.createSQLQuery("SELECT * FROM EMPLOYEES WHERE SALARY<="+sueldoe).addEntity(Employees.class).list();
+		List<Employees> sueldoemp=session.createSQLQuery("SELECT * FROM EMPLOYEES WHERE SALARY<"+sueldoe).addEntity(Employees.class).list();
 		Iterator it=sueldoemp.iterator();
 		while(it.hasNext()){
 			em=(Employees) it.next();

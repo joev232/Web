@@ -138,7 +138,18 @@
         <servlet-name>ServletUsuariosActivos</servlet-name>
         <url-pattern>/ServletUsuariosActivos</url-pattern>
      </servlet-mapping>
-    
+     
+	
+	    <servlet>
+        <description>Servlet para cerrar session</description>
+        <display-name>CerrarSession</display-name>
+        <servlet-name>CerrarSession</servlet-name>
+        <servlet-class>com.ejemplo.servlet.CerrarSession</servlet-class>
+   		 </servlet>
+   	 <servlet-mapping>
+        <servlet-name>CerrarSession</servlet-name>
+        <url-pattern>/CerrarSession</url-pattern>
+     </servlet-mapping>    
     
    
    <!-- listener -->
