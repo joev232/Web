@@ -10,6 +10,7 @@ import java.sql.Statement;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,8 +30,12 @@ private final Logger log= LogManager.getRootLogger();
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+			
 		String nombre=req.getParameter("nombre");
 		String pass=req.getParameter("pass");
+		
+		//desarrollo de una cookie
+		
 		resp.setContentType("text/html");
 		PrintWriter pw=resp.getWriter();
 		try {
@@ -56,7 +61,6 @@ private final Logger log= LogManager.getRootLogger();
 					//hago el logout
 					
 					//sc.setAttribute(nombreusuario, password);
-							
 				}
 				/**
 				 * else{
@@ -66,23 +70,18 @@ private final Logger log= LogManager.getRootLogger();
 				 */
 				pw.println("Bienvenido  "+nombreusuario);
 				//pw.println(edto.getFirstName());
-				
 				pw.println("<ul>");
 				pw.println("<li>");
 				pw.println("<a href=\"/ProyectoWeb/ingresarsalario.html\"> Listar Sueldos </a>" );
 				pw.println("</li>");
 				pw.println("</ul>");
-
-				
-				pw.println("<form >");
-				
+				//pw.println("<form >");
 				pw.println("<ul>");
 				pw.println("<li>");
 				pw.println("<a href=\"/ProyectoWeb/ListaDepartamento\"> Lista Departamentos </a>" );
 				pw.println("</li>");
 				pw.println("</ul>");
-
-				
+			
 				pw.println("<ul>");
 				pw.println("<li>");
 				pw.println("<a href=\"/ProyectoWeb/CerrarSession\"> SALIR </a>" );
@@ -104,5 +103,5 @@ private final Logger log= LogManager.getRootLogger();
 		
 	//	super.doPost(req, resp);
 	}
-
+	
 }

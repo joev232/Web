@@ -24,6 +24,8 @@
       
   </servlet-mapping>
   
+ <!-- prueba de mensaje de erros lo comento al servlet --> 
+ 
   <servlet>
       <description>Ejemplo de Listar Sueldos</description>
       <display-name>ListarSueldos</display-name>
@@ -35,6 +37,7 @@
       <servlet-name>ListarSueldos</servlet-name>
       <url-pattern>/ListarSueldos</url-pattern>
   </servlet-mapping>
+  
    
   
   <servlet>
@@ -151,6 +154,28 @@
         <url-pattern>/CerrarSession</url-pattern>
      </servlet-mapping>    
     
+   	 <servlet>
+   	     <description>Servlet error</description>
+   	     <display-name>ServletError</display-name>
+   	     <servlet-name>ServletError</servlet-name>
+   	     <servlet-class>com.ejemplo.servlet.ServletError</servlet-class>
+   	 </servlet>
+   	 <servlet-mapping>
+   	     <servlet-name>ServletError</servlet-name>
+   	     <url-pattern>/ServletError</url-pattern>
+   	 </servlet-mapping>
+   	 
+   	 <!-- servlet pagina de errores -->
+   	 <error-page>
+   	     <error-code>404</error-code>
+   	     <location>/ServletError</location>   	     
+   	 </error-page>
+   	 
+   	 <error-page>
+   	     <exception-type>javax.servlet.ServletException</exception-type>
+   	     <location>/ServletError</location>   	     
+   	 </error-page>
+   	 
    
    <!-- listener -->
    <listener>
@@ -188,6 +213,9 @@
   <session-config>
       <session-timeout>4</session-timeout>
   </session-config>
+  
+  
+  
   
  
 </web-app>
