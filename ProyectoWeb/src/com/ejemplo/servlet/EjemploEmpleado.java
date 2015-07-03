@@ -36,20 +36,29 @@ public class EjemploEmpleado extends HttpServlet {
 		IRecuperable i_hibernate=new EmpHibernateDAO();
 		//es.set
 		es.setRecuperable(i_hibernate);
+		//llamo al negocio
 		Employees edto = (Employees) es.leerEmpleado(Integer.parseInt(req.getParameter("nombre")));
 		//falta implentar esta cuadernos
 		
+		//hacerlos set para poder coger con el jsp
 		
-		resp.setContentType("text/html");
-		PrintWriter pw=resp.getWriter();
-		pw.println(edto.getFirstName());
+			
+//		resp.setContentType("text/html");
+//		PrintWriter pw=resp.getWriter();
+//		pw.println(edto.getFirstName());
+		
+		req.setAttribute("empleado", edto);
+		
+		//con forwadr nose ve jsp en navegador
+		req.getRequestDispatcher("/vista.jsp").forward(req, resp);
+		
 		
 		ServletContext sc= req.getServletContext();//refencia la contexto
 		
 		SessionFactory sf= (SessionFactory) sc.getAttribute("sf");
 		
 		//crear session y cerrarla
-		Session session=sf.openSession();
+		//Session session=sf.openSession();
 		
 		//Session session=sf.
 		

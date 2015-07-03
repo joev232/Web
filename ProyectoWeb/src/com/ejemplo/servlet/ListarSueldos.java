@@ -34,7 +34,9 @@ public class ListarSueldos extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
-		
+		/**
+		 * aqui llamo al metodo
+		 */
 		
 		resp.setContentType("text/html");
 		PrintWriter pw=resp.getWriter();
