@@ -32,21 +32,42 @@ public class ListaDepartamento extends HttpServlet  {
 		nveces++;
 		log.info(nveces);
 		
+		//esto hacerlo en el dao de lista departamento
 		Session session=SessionManager.obtenerSesionNueva();
 		List<Departments> ld=session.createSQLQuery("SELECT * FROM DEPARTMENTS").addEntity(Departments.class).list();
 		Departments d=null;
 		resp.setContentType("text/html");
 		PrintWriter pw=resp.getWriter();
-		pw.println("<select>");
+		
+		
+		pw.println("<form action=\"EmpleadosPorDepartamento\" method=\"get\">");
+		pw.println("<select name=\"departamentoid\">");
 		Iterator it=ld.iterator();
 		while(it.hasNext()){
 			d=(Departments) it.next();
 			pw.println("<option value="+d.getDepartmentId()+">"+d.getDepartmentName()+"</option>");
 		}
 		pw.println("</select>");
+		pw.println("<br><br>");
 		
-		req.getRequestDispatcher("/ServletUsuariosActivos").include(req, resp);
-				
+		
+
+		
+		pw.println("<input type=\"submit\" value=\"Enviar\"/>");
+		//desarrollo la vista para mostrar los empleados del departamento seleccionado
+		//req.setAttribute("departamento", d.getDepartmentId());
+		
+		//log.info("codigo elegido es:"+d.getDepartmentId());
+		pw.println("</form>");
+		
+
+		//comento el ejemplo de include
+		//req.getRequestDispatcher("/ServletUsuariosActivos").include(req, resp);
+		
+		
+
+		//req.getRequestDispatcher("/vistadepartamento.jsp").forward(req, resp);
+		
 		//super.doGet(req, resp);
 	}
 

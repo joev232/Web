@@ -165,6 +165,18 @@
    	     <url-pattern>/ServletError</url-pattern>
    	 </servlet-mapping>
    	 
+	   	 <servlet>
+   	     <description>Servlet Listado por Departtamentos</description>
+   	     <display-name>EmpleadosPorDepartamento</display-name>
+   	     <servlet-name>EmpleadosPorDepartamento</servlet-name>
+   	     <servlet-class>com.ejemplo.servlet.EmpleadosPorDepartamento</servlet-class>
+   	 </servlet>
+   	 <servlet-mapping>
+   	     <servlet-name>EmpleadosPorDepartamento</servlet-name>
+   	     <url-pattern>/EmpleadosPorDepartamento</url-pattern>
+   	 </servlet-mapping>   	 
+   	 
+   	 
    	 <!-- servlet pagina de errores -->
    	 <error-page>
    	     <error-code>404</error-code>

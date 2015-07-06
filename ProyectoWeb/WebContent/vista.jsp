@@ -12,10 +12,25 @@
 <h3>hollaaaaaaa mvcc</h3>
 
 <!-- class puede ser type la diferencia ?   request muere cuando se ejecuta jsp  -->
-<jsp:useBean id="empleado" class="com.ejemplo.tablasDTO.Employees" scope="request"/>
+<!-- class = sino lo crea lo genera y type=busca  y no crea un objeto xeso mejor usar type   -->
+
+<jsp:useBean id="empleado" type="com.ejemplo.tablasDTO.Employees" scope="request"/>
 
 <!-- hacer una tabla      empleado bean-->
-<jsp:getProperty property="firstName" name="empleado"/>
+
+<table>
+<tr>
+	<TH>Nombre</TH> <TH>Apellidos</TH> <TH>salary</TH>
+</tr>
+
+<tr>
+	<td><jsp:getProperty property="firstName" name="empleado"/></td>
+	<td><jsp:getProperty property="lastName" name="empleado"/></td>
+	<td><jsp:getProperty property="salary" name="empleado"/></td>
+	
+</tr>
+
+</table>
 
 
 </body>

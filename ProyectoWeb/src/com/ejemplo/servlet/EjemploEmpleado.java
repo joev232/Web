@@ -50,8 +50,10 @@ public class EjemploEmpleado extends HttpServlet {
 		req.setAttribute("empleado", edto);
 		
 		//con forwadr nose ve jsp en navegador
-		req.getRequestDispatcher("/vista.jsp").forward(req, resp);
+		//req.getRequestDispatcher("/vista.jsp").forward(req, resp);
 		
+		//ejemplo para EL
+		req.getRequestDispatcher("/vistael.jsp").forward(req, resp);
 		
 		ServletContext sc= req.getServletContext();//refencia la contexto
 		
