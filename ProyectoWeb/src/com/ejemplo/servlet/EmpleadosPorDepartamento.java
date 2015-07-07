@@ -31,10 +31,17 @@ public class EmpleadosPorDepartamento extends HttpServlet{
 		List<Employees> emple= empservice.obtenerEmpleadosPorDepartamento(deparid);
 //		
 //		
-		PrintWriter out=resp.getWriter();
+//		resp.setContentType("text/html");
+//		PrintWriter out=resp.getWriter();
+//		
+//		for (Employees employees : emple) {
+//			employees.getFirstName();
+//			out.println("Nombre:"+employees.getFirstName()+"<br>");
+//			out.println("Apellidos:"+employees.getLastName()+"<br>");
+//		}
+		
 		
 		req.setAttribute("listaempleados", emple);
-		
 		req.getRequestDispatcher("vistadepartamento.jsp").forward(req, resp);
 		//super.doGet(req, resp);
 	}

@@ -1,26 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
-    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ejemplo de expresion languaje</title>
+<title>Mi primer JSP</title>
 </head>
 <body>
 
-<UL>
+<%!int n = 0; %><%--DECLARACIÓN! :) --%>
 
-<LI><B>First Name:</B> 
-${empleado.firstName} 
-<LI><B>Last Name:</B> 
-${empleado.lastName}
-<LI><B>Company Name:</B> 
-${empleado.salary}
+<%n++; %><%--SCRIPTLET --%>
 
-</UL>
-
+<p>EL usuario está llamando <%=n%> veces <%--EXPRESIÓN! --%>
+<p>Luego es un número de veces
+<%if ((n%2)==0) { %><b>par</b>
+<b><%} else { %> impar <%} %> </b>
 
 </body>
 </html>
