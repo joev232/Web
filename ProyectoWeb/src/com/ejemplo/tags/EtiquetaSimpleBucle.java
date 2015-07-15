@@ -21,7 +21,7 @@ public class EtiquetaSimpleBucle extends SimpleTagSupport{
 		
 		for (int i = 0; i < num; i++) {
 			
-			getJspBody().invoke(null);
+			getJspBody().invoke(null);//imprime el cuerpo original
 			
 		}
 		

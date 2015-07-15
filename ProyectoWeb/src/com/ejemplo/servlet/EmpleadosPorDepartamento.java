@@ -23,9 +23,6 @@ public class EmpleadosPorDepartamento extends HttpServlet{
 //		req.getAttribute("departamentoid");
 //		List<Employees> emple= empservice.obtenerEmpleadosPorDepartamento("departamentoid");
 		
-	
-		
-		
 		String departamentoid= req.getParameter("departamentoid");
 		int deparid=Integer.parseInt(departamentoid);
 		List<Employees> emple= empservice.obtenerEmpleadosPorDepartamento(deparid);

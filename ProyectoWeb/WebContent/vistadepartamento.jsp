@@ -12,27 +12,20 @@
 
 
 
-
-<!-- muestro id del departamento a mostrar  -->
-<%--  <jsp:useBean id="listaempleados" type="com.ejemplo.tablasDTO.Employees" scope="request"/> --%>
-
-<%--   	<jsp:getProperty property="employeeId" name="listaempleados"/> --%>
-
 <table>
 
 <tr>
 	<TH>Nombre</TH> <TH>Apellidos</TH> <TH>salary</TH>
 	
 </tr>
-<c:forEach var="counter" items="${listaempleados}"> 
 <tr>
-	
-		<c:out value="${counter.firstName}"/> <br>
-		<c:out value="${counter.lastName}"/> <br>
-		<c:out value="${counter.salary}"/> <br>
-	
+	<c:forEach var="counter" items="${listaempleados}"> 
+		<tr><td><c:out value="${counter.firstName}"/> </td>
+		<td><c:out value="${counter.lastName}"/></td>
+		<td><c:out value="${counter.salary}"/> </td></tr>
+	</c:forEach>
 </tr>
-</c:forEach>
+
 </table>
 
 

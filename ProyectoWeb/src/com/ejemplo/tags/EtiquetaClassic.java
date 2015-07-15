@@ -15,7 +15,7 @@ public class EtiquetaClassic extends BodyTagSupport{
 	
 	@Override
 	public int doStartTag() throws JspException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub           //dosatartag devuelve un entero   desade el mitag.jsp llama por el parser
 		System.out.println("Estoy al inicio de la etiqueta");
 		System.out.println("Id country = " +idcountry);
 		//return EVAL_BODY_INCLUDE; //le digo que evalue el cuerpo!

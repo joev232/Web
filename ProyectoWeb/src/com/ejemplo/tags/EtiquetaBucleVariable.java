@@ -3,6 +3,7 @@ package com.ejemplo.tags;
 import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class EtiquetaBucleVariable extends SimpleTagSupport{
@@ -14,9 +15,12 @@ public class EtiquetaBucleVariable extends SimpleTagSupport{
 	
 	@Override
 	public void doTag() throws JspException, IOException {
+		//declarar variable pagecontex
+		PageContext pc=(PageContext) getJspContext();
 		
 		for (int i=0; i<num; i++) {
-            getJspContext().setAttribute("count", String.valueOf( i + 1 ) );
+            // getJspContext().setAttribute("count", String.valueOf( i + 1 ) );
+			pc.getRequest().setAttribute("count", String.valueOf( i + 1 ) );
             getJspBody().invoke(null);
         }
 		

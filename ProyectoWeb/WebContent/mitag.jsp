@@ -14,5 +14,8 @@ ETIQUETA SIMPLE! <br>
 <mitag:atrDinamico  num="5">${count}</mitag:atrDinamico>
 <br>ETIQUETA CLASSIC! <br>
 <mitag:classic  num="5" idcountry="${count}">${count}</mitag:classic>
+<br>Etiqueta departamento<br>
+<mitag:departamento iddepartamento="80">${empleado}</mitag:departamento>
+
 </body>
 </html>
