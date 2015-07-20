@@ -176,7 +176,21 @@
    	     <url-pattern>/EmpleadosPorDepartamento</url-pattern>
    	 </servlet-mapping>   	 
    	 
+   	  <!-- servlet para ejemplo de ajax-->
    	 
+   	   <servlet>
+      <description>Ejemplo de prueba</description>
+      <display-name>CargarMenu</display-name>
+      <servlet-name>CargarMenu</servlet-name>
+      <servlet-class>com.ejemplo.servlet.CargarMenu</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>CargarMenu</servlet-name>
+      <url-pattern>/CargarMenu</url-pattern>
+      
+  </servlet-mapping>
+  
    	 
    	 <!-- servlet para subir ficheros -->
    	 
